@@ -16,36 +16,39 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-
-
-
-//Initial Discovery of creating random numbers
-var randNum = Math.random();
-
-// This creates a random integer
-console.log (randNum)
-
-//This creates a random whole number less than 1000
-console.log (Math.trunc(randNum * 1000))
-
-//This creates a random number between zero and 999 and does it 101 separate times
-// for (var x = 0; x <= 100; x++) {
-//   console.log (x +" - "+(Math.trunc(Math.random() * 1000)))
-// }
-
 //This generates a total number of random number [countOfnumber] between a min and max
 
-var max = 10000;
-var min = 5000;
-var countOfnumbers = 100;
+var max = 10;
+var min = 0;
+var countOfnumbers = 0;
 
-for (var x = 0; x <= countOfnumbers; x++) {
-  var randomNumber = (Math.trunc(Math.random() * 10000));
+
+
+for (var i = 0; i <= countOfnumbers; i++) {
+  var randomNumber = (Math.trunc(Math.random() * 100));
   if (randomNumber < max && randomNumber > min)
   {
-  console.log (x +" - "+(randomNumber))
+  console.log (i +" - "+(randomNumber))
     } 
-  else {x--}
+  else {i--}
 }
 
+// This generates the value of the position that is created by randomNumber
+var myarray = ["plane","train","car","boat", "bike", "sled"];
 
+var selectedValue = myarray[randomNumber];
+
+console.log(selectedValue)
+
+
+//Creating an array for my password generator
+
+var NumbersOnly = [0,1,2,3,4,5,6,7,8,9];
+var LettersOnly = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+var symbols = ["\~","\!","\@","\#","\$","\%","^","\&","*","(",")","_","+","\=","-",";",":","{","}","[","]","\/","<",">"];
+
+var totalarray = NumbersOnly.concat(LettersOnly,symbols);
+
+console.log(totalarray);
+
+document.write(totalarray);
