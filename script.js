@@ -16,6 +16,9 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
+
+
+
 //Initial Discovery of creating random numbers
 var randNum = Math.random();
 
@@ -30,12 +33,19 @@ console.log (Math.trunc(randNum * 1000))
 //   console.log (x +" - "+(Math.trunc(Math.random() * 1000)))
 // }
 
-//This attempts to limit the random number to a max limit of 100
-for (var x = 0; x <= 100; x++) {
-  if ((Math.trunc(Math.random() * 1000)) < 100)
+//This generates a total number of random number [countOfnumber] between a min and max
+
+var max = 10000;
+var min = 5000;
+var countOfnumbers = 100;
+
+for (var x = 0; x <= countOfnumbers; x++) {
+  var randomNumber = (Math.trunc(Math.random() * 10000));
+  if (randomNumber < max && randomNumber > min)
   {
-  console.log (x +" - "+(Math.trunc(Math.random() * 1000)))
-  
-  } 
-  else {console.log("no can do")}
+  console.log (x +" - "+(randomNumber))
+    } 
+  else {x--}
 }
+
+
