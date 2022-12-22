@@ -14,6 +14,11 @@ function passwordGenerator() {
   let useUpper =  confirm("Do you want to use UPPER case letters in your password?"); 
   let  useSymbols = confirm("Do you want to use SYMBOLS in your password?");
 
+  if (!useNumbers && !useLower && !useUpper && !useSymbols) {
+    alert("PLEASE GO BACK AND ENSURE THAT AT LEAST ONE CHARACTER TYPE IS SELECT")
+    passwordGenerator()
+}
+  else{
   console.log("password Length: "+ passwordLength)
   console.log("Numbers: " + useNumbers)
   console.log("Lower: " + useLower)
@@ -54,4 +59,4 @@ function passwordGenerator() {
 }
 //  document.getElementById('password').innerHTML = passwordResult;
 }
-
+}
