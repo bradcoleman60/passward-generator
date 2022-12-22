@@ -1,6 +1,5 @@
 //The function below "passwordGenerator" creates a random password based on inputs from the visitor.  The inputs include the length (as to be 8 or more characters but not more than 128 characters), and 4 classes of characters (Numbers, Upper case letters, Lower case letters or symbols).  See comments on specific elements of the code below. 
 
-
 function passwordGenerator() {
   let passwordLength = prompt("Enter a password length of at least 8 characters but no longer than 128 characters");
 
@@ -47,21 +46,21 @@ function passwordGenerator() {
     stringToChooseFrom += symbolstring;
   }
   
-  //Establishes the variable "passwordResult".  This will ultimately contain the password desired. 
+//Establishes the variable "passwordResult".  This will ultimately contain the password desired. 
   var passwordResult = ""
   
-  //Established the variable to hold the length of the stringToChoseFrom, needed in the calculation of the random string generator. 
+//Establishes the variable to hold the length of the stringToChoseFrom, needed in the calculation of the random string generator. 
   var stringLength = stringToChooseFrom.length;
   
-  //This FOR loop iterates for a number of times equal to the desired password length. In each loop, a random number between zero (Math.floor) and the stringLength and then the "charAt" function selects the character in the position of that random number.  The "+=" operator increments the password string with each loop and the loop is finished when the desired password length is reached. 
+//This FOR loop iterates for a number of times equal to the desired password length. In each loop, a random number between zero and the stringLength and then the "charAt" method selects the character in the position of that random number.  The "+=" operator increments the password string with each loop and the loop is finished when the desired password length is reached. The "Math.Random()" method is a built-in function that selects a random number between 0 and 1.  The random number is multiplied by the number of characters in the string to ensure that each character has a chance to be randomly selected.  The "Math.floor" method is a built-in method that rounds down the random number to a whole number, since  the "charAt" function can only use whole numbers. 
   for (let i = 0; i < passwordLength; i++) {
       passwordResult += stringToChooseFrom.charAt(Math.floor(Math.random() * stringLength));
     }
 
-  //This command passes the resultant password to the HTML element 'password' to render the password back to the webpage so the visitor can view.  
+//This command passes the resultant password to the HTML element 'password' to render the password back to the webpage so the visitor can view.  
     document.getElementById('password').innerHTML = passwordResult;
   
-  //Consol.logs useful for de-bugging:
+//Consol.logs useful for de-bugging:
   // console.log("Password Length: "+ passwordLength)
   // console.log("Use Numbers: " + useNumbers)
   // console.log("Use Lower: " + useLower)
