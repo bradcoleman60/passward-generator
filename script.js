@@ -1,24 +1,10 @@
-// Assignment Code
-// var generateBtn = document.querySelector("#generate");
 
-// Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
-
-// Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-
-function passwordLengthPrompt() {
-  let passwordLength = prompt("Enter a password length longer than 8 but no longer than 128");
+function passwordGenerator() {
+  let passwordLength = prompt("Enter a password length of at least 8 characters but no longer than 128 characters");
   if (passwordLength <8 || passwordLength > 128)
   { 
-    alert("Please enter a password length that is at least 8 but no longer that 128")
-    passwordLengthPrompt()
+    alert("PLEASE GO BACK AND ENTER A PASSWORDD AT LEAST 8 CHARACTERS BUT NO MORE THANT 128")
+    passwordGenerator()
   } 
   
   else {
@@ -64,8 +50,8 @@ function passwordLengthPrompt() {
   }
     
   console.log(passwordResult)
-  
+  document.getElementById('password').innerHTML = passwordResult;
 }
-
+//  document.getElementById('password').innerHTML = passwordResult;
 }
 
