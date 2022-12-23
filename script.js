@@ -25,7 +25,7 @@ of the process. */
 /*If the password length is validated the visitor is asked to confirm whether to include 4 different classes of 
 characters.  The code below stores these confirmations. (Note these are Boolean answers)  */
   else {
-  console.log(passwordLength)
+  
   let useNumbers = confirm("Do you want to include NUMBERS in your password?");
   let useLower = confirm("Do you want to use LOWER case letters in your password?");
   let useUpper =  confirm("Do you want to use UPPER case letters in your password?"); 
