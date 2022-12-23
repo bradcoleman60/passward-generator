@@ -30,10 +30,42 @@ The following is code that I created that I would like to highlight.  Though thi
 
 
 ```
-//Establishes the variable to hold the length of the stringToChoseFrom, needed in the calculation of the random string generator. 
+/*If the character sets are validated, the function continues below.  The following lines define 
+variables that contain strings of the 4 character types.  Additionally. "stringToChooseFrom" established 
+a variable that will ultimately hold all the characters used to choose the password from. */
+  var Numberstring =['0123456789'];
+  var lowerString = ['abcdefghijklmnopqrstuvwxyz'];
+  var upperstring = ['ABCDEFGHIJKLMNOPQRSTUVWXYZ']
+  var symbolstring = ['!@#$%^&*()][/><?+']
+  var stringToChooseFrom = ""
+  
+/*The following IF statement iterates on the 4 Boolean (character type) variables and if TRUE then 
+appends "stringToChooseFrom" with the associated character string. */
+  if (useNumbers) {
+    stringToChooseFrom += Numberstring;
+  }  if (useLower) {
+    stringToChooseFrom += lowerString;
+  }  if (useUpper) {
+    stringToChooseFrom += upperstring;
+  }  if (useSymbols){
+    stringToChooseFrom += symbolstring;
+  }
+  
+//Establishes the variable "passwordResult".  This will ultimately contain the password desired. 
+  var passwordResult = ""
+  
+/*Establishes the variable to hold the length of the stringToChoseFrom, needed in the calculation of 
+the random string generator. */
   var stringLength = stringToChooseFrom.length;
   
-//This FOR loop iterates for a number of times equal to the desired password length. In each loop, a random number between zero and the stringLength and then the "charAt" function selects the character in the position of that random number.  The "+=" operator increments the password string with each loop and the loop is finished when the desired password length is reached. The "Math.Random()" function is a built-in function that selects a random number between 0 and 1.  The random number is multiplied by the number of characters in the string to ensure that each character has a chance to be randomly selected.  The "Math.floor" function is a built-in function that rounds down the random number to a whole number, since  the "charAt" function can only use whole numbers. 
+/*This FOR loop iterates for a number of times equal to the desired password length. In each loop, a 
+random number between zero and the stringLength and then the "charAt" method selects the character in 
+the position of that random number.  The "+=" operator increments the password string with each loop and 
+the loop is finished when the desired password length is reached. The "Math.Random()" method is a built-in 
+function that selects a random number between 0 and 1.  The random number is multiplied by the number of 
+characters in the string to ensure that each character has a chance to be randomly selected.  The "Math.floor"
+ method is a built-in method that rounds down the random number to a whole number, since  the "charAt" 
+ function can only use whole numbers. */
   for (let i = 0; i < passwordLength; i++) {
       passwordResult += stringToChooseFrom.charAt(Math.floor(Math.random() * stringLength));
     }
@@ -85,7 +117,7 @@ I used many useful references in completing this project including the following
 
 I had two major learnings on the project:
 
-1. I failed to perform a GIT COMMIT at an integral step in my code development.  During this project, I completed the functionality of generating the desired password using static variables for password length and Boolean answers for whether to include the 4 classes of characters.  This was before I created the PROMPT and CONFIRM code to consumer such variables from the visitor.  At this point with the random generator working, I failed to COMMIT the code to my repo.  I then furter iterated the code and subsequently broke it.  This caused uncessary delay and rebuild of the code.  Though, I didnt see this as a major set back, and it helped me gain confidence that I fully understood the logic of the METHODS I was using.
+1. I failed to perform a GIT COMMIT at an integral step in my code development.  During this project, I completed the functionality of generating the desired password using static variables for password length and Boolean answers for whether to include the 4 classes of characters.  This was before I created the PROMPT and CONFIRM code to consumer such variables from the visitor.  At this point with the random generator working, I failed to COMMIT the code to my repo.  I then further iterated the code and subsequently broke it.  This caused uncessary delay and rebuild of the code.  Though, I didnt see this as a major set back, and it helped me gain confidence that I fully understood the logic of the METHODS I was using.
 
 2.  I learned that there are code short cuts in Java Script.  In particular "X += Y" is short hand for "X = X + Y". 
 
